@@ -5,7 +5,7 @@ import 'auth/signup.dart';
 import 'homepage.dart';
 
 void main(List<String> args) {
-  runApp( const MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -14,13 +14,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: const Login(),
       routes: {
-        "home":(context) => const HomePage(),
-        "login":(context) => const Login(),
-        "Signup":(context) => const SignUp()
+        "home": (context) => const HomePage(),
+        "login": (context) => const Login(),
+        "Signup": (context) => const SignUp()
       },
-
     );
   }
 }
