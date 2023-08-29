@@ -12,7 +12,7 @@ class SignUp extends StatefulWidget {
 String? username, email, password;
 GlobalKey<FormState> formstate = GlobalKey<FormState>();
 var formdate = formstate.currentState!;
-bool seePassword = false;
+bool seePassword = true;
 
 bool send() {
   if (formdate.validate()) {
