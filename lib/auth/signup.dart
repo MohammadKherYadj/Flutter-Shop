@@ -119,7 +119,9 @@ class _SignUpState extends State<SignUp> {
                           if (value!.isEmpty) {
                             return "Empty Field";
                           }
-                          if (value.length < 8) {}
+                          if (value.length < 8) {
+                            return "Password must be 8 character at less";
+                          }
                         },
                         obscureText: seePassword,
                         decoration: InputDecoration(
@@ -150,7 +152,7 @@ class _SignUpState extends State<SignUp> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(bottom: 15),
+                      margin: const EdgeInsets.only(bottom: 15),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
