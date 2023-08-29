@@ -182,7 +182,7 @@ class _SignUpState extends State<SignUp> {
                           side: const BorderSide(
                             color: Colors.black,
                           ),
-                          primary: Colors.blue),
+                          primary: Colors.white),
                       child: const Text(
                         "Sign Up",
                         style: TextStyle(color: Colors.black),
