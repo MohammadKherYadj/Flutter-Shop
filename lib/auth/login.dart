@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop/homepage.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -73,9 +74,14 @@ class _LoginState extends State<Login> {
                     Column(
                       children: [
                         Container(
+                          decoration: BoxDecoration(),
                           padding: EdgeInsets.only(top: 20),
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              setState(() {
+                                
+                              });
+                            },
                             child: Text(
                               "login",
                               style: TextStyle(fontStyle: FontStyle.italic),
@@ -87,7 +93,7 @@ class _LoginState extends State<Login> {
                           ),
                         ),
                       ],
-                    )
+                    ),
                   ],
                 ),
               )
@@ -123,8 +129,7 @@ class Textinput extends StatelessWidget {
               contentPadding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
               border: InputBorder.none,
               hintText: hint,
-              labelText: "your email",
-              hintStyle: TextStyle(color: Colors.white, fontSize: 16)),
+              hintStyle: TextStyle(color: Colors.red, fontSize: 16)),
           style: TextStyle(
             color: Colors.white,
             fontSize: 18,
@@ -160,8 +165,7 @@ class Passwordinput extends StatelessWidget {
               contentPadding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
               border: InputBorder.none,
               hintText: hint,
-              labelText: "Password",
-              hintStyle: TextStyle(color: Colors.white, fontSize: 16)),
+              hintStyle: TextStyle(color: Colors.red, fontSize: 16)),
           obscureText: true,
           style: TextStyle(
             color: Colors.white,
