@@ -15,83 +15,91 @@ class _LoginState extends State<Login> {
         body: Container(
           height: double.infinity,
           width: double.infinity,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("images/photo.jpg"),
                   fit: BoxFit.cover,
                   colorFilter:
                       ColorFilter.mode(Colors.black45, BlendMode.darken))),
-          child: Column(
-            children: [
-              Container(
-                padding: EdgeInsets.symmetric(vertical: 20),
-                // width: 50,
-                // height: 40,
-                child: Text(
-                  "Login",
-                  style: TextStyle(
-                    color: Colors.red,
-                    fontSize: 45,
-                    fontStyle: FontStyle.italic,
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              children: [
+                Container(
+                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  // width: 50,
+                  // height: 40,
+                  child: const Text(
+                    "Login",
+                    style: TextStyle(
+                      color: Colors.red,
+                      fontSize: 45,
+                      fontStyle: FontStyle.italic,
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 100,
-              ),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                child: Column(
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Textinput(
-                          inputAction: TextInputAction.next,
-                          inputType: TextInputType.emailAddress,
-                          hint: "Email",
-                        ),
-                        //////////////////////////////////////////////////////////
-
-                        Passwordinput(
-                          inputAction: TextInputAction.done,
-                          hint: "Password",
-                        ),
-
-                        Container(
-                          margin: EdgeInsets.only(right: 20),
-                          child: Text(
-                            "forget password ?",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 17,
-                                fontStyle: FontStyle.italic),
-                          ),
-                        )
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.only(top: 20),
-                          child: ElevatedButton(
-                            onPressed: () {},
-                            child: Text(
-                              "login",
-                              style: TextStyle(fontStyle: FontStyle.italic),
-                            ),
-                            style: ElevatedButton.styleFrom(
-                              primary: Colors.red,
-                              elevation: 10,
-                            ),
-                          ),
-                        ),
-                      ],
-                    )
-                  ],
+                const SizedBox(
+                  height: 100,
                 ),
-              )
-            ],
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Column(
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          const Textinput(
+                            inputAction: TextInputAction.next,
+                            inputType: TextInputType.emailAddress,
+                            hint: "Email",
+                          ),
+                          //////////////////////////////////////////////////////////
+
+                          const Passwordinput(
+                            inputAction: TextInputAction.done,
+                            hint: "Password",
+                          ),
+
+                          InkWell(
+                            onTap: () {},
+                            child: Container(
+                              margin: const EdgeInsets.only(right: 20),
+                              child: const Text(
+                                "forget password ?",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 17,
+                                    fontStyle: FontStyle.italic),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.only(top: 20),
+                            child: ElevatedButton(
+                              onPressed: () {
+                                Navigator.pushReplacementNamed(context, "home");
+                              },
+                              style: ElevatedButton.styleFrom(
+                                primary: Colors.red,
+                                elevation: 10,
+                              ),
+                              child: const Text(
+                                "login",
+                                style: TextStyle(fontStyle: FontStyle.italic),
+                              ),
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),
@@ -115,17 +123,18 @@ class Textinput extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 12.0),
       child: Container(
-        margin: EdgeInsets.all(15),
+        margin: const EdgeInsets.all(15),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16), color: Colors.grey[800]),
         child: TextField(
           decoration: InputDecoration(
-              contentPadding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
+              contentPadding:
+                  const EdgeInsets.only(left: 20, top: 10, bottom: 10),
               border: InputBorder.none,
               hintText: hint,
-              labelText: "your email",
-              hintStyle: TextStyle(color: Colors.white, fontSize: 16)),
-          style: TextStyle(
+              labelText: "Email",
+              hintStyle: const TextStyle(color: Colors.white, fontSize: 16)),
+          style: const TextStyle(
             color: Colors.white,
             fontSize: 18,
           ),
@@ -152,18 +161,19 @@ class Passwordinput extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 12.0),
       child: Container(
-        margin: EdgeInsets.all(15),
+        margin: const EdgeInsets.all(15),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16), color: Colors.grey[800]),
         child: TextField(
           decoration: InputDecoration(
-              contentPadding: EdgeInsets.only(left: 20, top: 10, bottom: 10),
+              contentPadding:
+                  const EdgeInsets.only(left: 20, top: 10, bottom: 10),
               border: InputBorder.none,
               hintText: hint,
               labelText: "Password",
-              hintStyle: TextStyle(color: Colors.white, fontSize: 16)),
+              hintStyle: const TextStyle(color: Colors.white, fontSize: 16)),
           obscureText: true,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.white,
             fontSize: 18,
           ),
