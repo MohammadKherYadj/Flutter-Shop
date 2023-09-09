@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class Product {
   final int price, id;
   final String description, title, image, subtitle;
@@ -14,7 +12,6 @@ class Product {
 }
 
 List<Product> products = [
-
   Product(
       description:
           " Ram : 8 GB ,Hard : 256 GB,disply : Super Amoled , camera : 200px",
