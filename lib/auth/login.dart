@@ -58,16 +58,54 @@ class _LoginState extends State<Login> {
                           hint: "Password",
                         ),
 
-                        Container(
-                          margin: EdgeInsets.only(right: 20),
-                          child: Text(
-                            "forget password ?",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 17,
-                                fontStyle: FontStyle.italic),
-                          ),
+                        Row(
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(left: 20),
+                              child: Text(
+                                "forget password ?",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 17,
+                                    fontStyle: FontStyle.italic),
+                              ),
+                            ),
+                            Container(
+                              child: Row(
+                                children: [
+                                  InkWell(
+                                    child: const Text(
+                                      "Signup",
+                                      style: TextStyle(
+                                          fontStyle: FontStyle.italic,
+                                          fontSize: 17,
+                                          color: Colors.white),
+                                    ),
+                                    onTap: () {
+                                      Navigator.pushNamed(context, "Signup");
+                                    },
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
+                        // Row(
+                        //   children: [
+
+                        //     // Container(
+                        //     //   margin: EdgeInsets.only(right: 20),
+                        //     //   padding: EdgeInsets.only(right: 20),
+                        //     //   child: Text(
+                        //     //     "creat account",
+                        //     //     style: TextStyle(
+                        //     //         color: Colors.white,
+                        //     //         fontSize: 17,
+                        //     //         fontStyle: FontStyle.italic),
+                        //     //   ),
+                        //     // ),
+                        //   ],
+                        // ),
                       ],
                     ),
                     Column(
