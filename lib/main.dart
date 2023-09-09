@@ -3,7 +3,6 @@ import 'package:shop/auth/Homepage/page/home_Screen.dart';
 
 import 'auth/login.dart';
 import 'auth/signup.dart';
-import 'homepage.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
