@@ -1,5 +1,3 @@
-
-
 class Product {
   final int price, id;
   final String description, title, image, subtitle;
