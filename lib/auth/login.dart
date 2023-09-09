@@ -68,7 +68,7 @@ class _LoginState extends State<Login> {
                                 fontSize: 17,
                                 fontStyle: FontStyle.italic),
                           ),
-                        )
+                        ),
                       ],
                     ),
                     Column(
