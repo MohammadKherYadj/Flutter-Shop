@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop/homepage.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -115,7 +116,7 @@ class _LoginState extends State<Login> {
                           padding: EdgeInsets.only(top: 20),
                           child: ElevatedButton(
                             onPressed: () {
-                              setState(() {});
+                              Navigator.pushNamed(context, "home");
                             },
                             child: Text(
                               "login",
