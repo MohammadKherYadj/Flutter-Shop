@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../constants.dart';
 import '../../products.dart';
 
@@ -19,11 +18,10 @@ class ItemCard extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          padding: EdgeInsets.all(kDefaultPadding),
-          height: 185,
-          width: 185,
-          decoration: BoxDecoration(
-              color: Colors.blue, borderRadius: BorderRadius.circular(20)),
+          padding: const EdgeInsets.all(kDefaultPadding),
+          height: 150,
+          width: 150,
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
           child: Image.asset(product.image),
         ),
         Padding(
@@ -32,7 +30,7 @@ class ItemCard extends StatelessWidget {
             padding: const EdgeInsets.only(left: 15),
             child: Text(
               product.title,
-              style: TextStyle(color: kTextColor),
+              style: const TextStyle(color: kTextColor),
             ),
           ),
         ),
@@ -40,7 +38,7 @@ class ItemCard extends StatelessWidget {
           padding: const EdgeInsets.only(left: 20),
           child: Text(
             "\$${product.price}",
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: const TextStyle(fontWeight: FontWeight.bold),
           ),
         )
       ],

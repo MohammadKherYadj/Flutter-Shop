@@ -14,9 +14,9 @@ class _CategoriesState extends State<Categories> {
     "Laptop",
     "Mobile",
     "Specker",
-    "copmputer",
-    "bags",
-    "cats",
+    "Computer",
+    "Bags",
+    "Cats",
   ];
   int sellectedIndex = 0;
   @override
@@ -51,7 +51,7 @@ class _CategoriesState extends State<Categories> {
                         sellectedIndex == index ? kTextColor : kTextLightColor),
               ),
               Container(
-                margin: EdgeInsets.only(top: kDefaultPadding / 4),
+                margin: const EdgeInsets.only(top: kDefaultPadding / 4),
                 height: 2,
                 color:
                     sellectedIndex == index ? Colors.red : Colors.transparent,
