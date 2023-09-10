@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop/auth/Homepage/page/home_Screen.dart';
 
 import 'auth/login.dart';
 import 'auth/signup.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: const SignUp(),
       routes: {
-        "home": (context) => const HomePage(),
+        "home": (context) => const HomeScren(),
         "login": (context) => const Login(),
         "Signup": (context) => const SignUp()
       },
