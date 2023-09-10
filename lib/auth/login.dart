@@ -21,49 +21,47 @@ class _LoginState extends State<Login> {
                   fit: BoxFit.cover,
                   colorFilter:
                       ColorFilter.mode(Colors.black45, BlendMode.darken))),
-          child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Column(
-              children: [
-                Container(
-                  padding: const EdgeInsets.symmetric(vertical: 20),
-                  // width: 50,
-                  // height: 40,
-                  child: const Text(
-                    "Login",
-                    style: TextStyle(
-                      color: Colors.red,
-                      fontSize: 45,
-                      fontStyle: FontStyle.italic,
-                    ),
+          child: Column(
+            children: [
+              Container(
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                // width: 50,
+                // height: 40,
+                child: const Text(
+                  "Login",
+                  style: TextStyle(
+                    color: Colors.red,
+                    fontSize: 45,
+                    fontStyle: FontStyle.italic,
                   ),
                 ),
-                const SizedBox(
-                  height: 100,
-                ),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Column(
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          const Textinput(
-                            inputAction: TextInputAction.next,
-                            inputType: TextInputType.emailAddress,
-                            hint: "Email",
-                          ),
-                          //////////////////////////////////////////////////////////
+              ),
+              const SizedBox(
+                height: 100,
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        const Textinput(
+                          inputAction: TextInputAction.next,
+                          inputType: TextInputType.emailAddress,
+                          hint: "Email",
+                        ),
+                        //////////////////////////////////////////////////////////
 
-                          const Passwordinput(
-                            inputAction: TextInputAction.done,
-                            hint: "Password",
-                          ),
+                        const Passwordinput(
+                          inputAction: TextInputAction.done,
+                          hint: "Password",
+                        ),
 
-                          InkWell(
-                            onTap: () {},
-                            child: Container(
-                              margin: const EdgeInsets.only(right: 20),
+                        Row(
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.only(left: 20),
                               child: const Text(
                                 "forget password ?",
                                 style: TextStyle(
@@ -72,34 +70,67 @@ class _LoginState extends State<Login> {
                                     fontStyle: FontStyle.italic),
                               ),
                             ),
-                          )
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.only(top: 20),
-                            child: ElevatedButton(
-                              onPressed: () {
-                                Navigator.pushReplacementNamed(context, "home");
-                              },
-                              style: ElevatedButton.styleFrom(
-                                primary: Colors.red,
-                                elevation: 10,
-                              ),
-                              child: const Text(
-                                "login",
-                                style: TextStyle(fontStyle: FontStyle.italic),
-                              ),
+                            Row(
+                              children: [
+                                InkWell(
+                                  child: const Text(
+                                    "Signup",
+                                    style: TextStyle(
+                                        fontStyle: FontStyle.italic,
+                                        fontSize: 17,
+                                        color: Colors.white),
+                                  ),
+                                  onTap: () {
+                                    Navigator.pushNamed(context, "Signup");
+                                  },
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
+                        // Row(
+                        //   children: [
+
+                        //     // Container(
+                        //     //   margin: EdgeInsets.only(right: 20),
+                        //     //   padding: EdgeInsets.only(right: 20),
+                        //     //   child: Text(
+                        //     //     "creat account",
+                        //     //     style: TextStyle(
+                        //     //         color: Colors.white,
+                        //     //         fontSize: 17,
+                        //     //         fontStyle: FontStyle.italic),
+                        //     //   ),
+                        //     // ),
+                        //   ],
+                        // ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Container(
+                          decoration: const BoxDecoration(),
+                          padding: const EdgeInsets.only(top: 20),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              setState(() {});
+                            },
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.red,
+                              elevation: 10,
+                            ),
+                            child: const Text(
+                              "login",
+                              style: TextStyle(fontStyle: FontStyle.italic),
                             ),
                           ),
-                        ],
-                      )
-                    ],
-                  ),
-                )
-              ],
-            ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              )
+            ],
           ),
         ),
       ),
