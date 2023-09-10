@@ -38,8 +38,63 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 100,
+              
+              SizedBox(
+                height: 100,
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Textinput(
+                          inputAction: TextInputAction.next,
+                          inputType: TextInputType.emailAddress,
+                          hint: "Email",
+                        ),
+                        //////////////////////////////////////////////////////////
+
+                        Passwordinput(
+                          inputAction: TextInputAction.done,
+                          hint: "Password",
+                        ),
+
+                        Container(
+                          margin: EdgeInsets.only(right: 20),
+                          child: Text(
+                            "forget password ?",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 17,
+                                fontStyle: FontStyle.italic),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(),
+                          padding: EdgeInsets.only(top: 20),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              setState(() {});
+                            },
+                            child: Text(
+                              "login",
+                              style: TextStyle(fontStyle: FontStyle.italic),
+                            ),
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.red,
+                              elevation: 10,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
