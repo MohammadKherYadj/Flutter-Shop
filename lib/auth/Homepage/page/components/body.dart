@@ -11,31 +11,116 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return TabBarView(
       children: [
-        const Categories(),
-        Expanded(
-            child: Container(
-          margin: const EdgeInsets.symmetric(horizontal: 5),
-          child: GridView.builder(
-            itemCount: products.length,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              childAspectRatio: 0.75,
-              crossAxisSpacing: 5,
-              mainAxisSpacing: 5,
-            ),
-            itemBuilder: (context, index) => ItemCard(
-                press: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: ((context) => const DetailsScreen())));
-                },
-                product: products[index]),
-          ),
-        ))
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            //const Categories(),
+            Expanded(
+                child: Container(
+              margin: const EdgeInsets.symmetric(horizontal: 5),
+              child: GridView.builder(
+                itemCount: products.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 0.75,
+                  crossAxisSpacing: 5,
+                  mainAxisSpacing: 5,
+                ),
+                itemBuilder: (context, index) => ItemCard(
+                    press: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: ((context) => const DetailsScreen())));
+                    },
+                    product: products[index]),
+              ),
+            ))
+          ],
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            //const Categories(),
+            Expanded(
+                child: Container(
+              margin: const EdgeInsets.symmetric(horizontal: 5),
+              child: GridView.builder(
+                itemCount: products.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 0.75,
+                  crossAxisSpacing: 5,
+                  mainAxisSpacing: 5,
+                ),
+                itemBuilder: (context, index) => ItemCard(
+                    press: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: ((context) => const DetailsScreen())));
+                    },
+                    product: products[index]),
+              ),
+            ))
+          ],
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            //const Categories(),
+            Expanded(
+                child: Container(
+              margin: const EdgeInsets.symmetric(horizontal: 5),
+              child: GridView.builder(
+                itemCount: products.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 0.75,
+                  crossAxisSpacing: 5,
+                  mainAxisSpacing: 5,
+                ),
+                itemBuilder: (context, index) => ItemCard(
+                    press: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: ((context) => const DetailsScreen())));
+                    },
+                    product: products[index]),
+              ),
+            ))
+          ],
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            //const Categories(),
+            Expanded(
+                child: Container(
+              margin: const EdgeInsets.symmetric(horizontal: 5),
+              child: GridView.builder(
+                itemCount: products.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 0.75,
+                  crossAxisSpacing: 5,
+                  mainAxisSpacing: 5,
+                ),
+                itemBuilder: (context, index) => ItemCard(
+                    press: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: ((context) => const DetailsScreen())));
+                    },
+                    product: products[index]),
+              ),
+            ))
+          ],
+        ),
       ],
     );
   }
