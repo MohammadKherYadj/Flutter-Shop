@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop/auth/signup.dart';
 import 'package:shop/homepage.dart';
 
 class Login extends StatefulWidget {
@@ -57,6 +58,7 @@ class _LoginState extends State<Login> {
                         const Passwordinput(
                           inputAction: TextInputAction.done,
                           hint: "Password",
+                          password: '',
                         ),
 
                         Row(
@@ -64,26 +66,32 @@ class _LoginState extends State<Login> {
                             Container(
                               margin: const EdgeInsets.only(left: 20),
                               child: const Text(
-                                "forget password ?",
+                                "forget password?",
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 17,
                                     fontStyle: FontStyle.italic),
                               ),
                             ),
+                            SizedBox(
+                              height: 30,
+                            ),
                             Row(
                               children: [
-                                InkWell(
-                                  child: const Text(
-                                    "Signup",
-                                    style: TextStyle(
-                                        fontStyle: FontStyle.italic,
-                                        fontSize: 17,
-                                        color: Colors.white),
+                                Container(
+                                  margin: EdgeInsets.only(left: 20),
+                                  child: InkWell(
+                                    child: const Text(
+                                      "Signup",
+                                      style: TextStyle(
+                                          fontStyle: FontStyle.italic,
+                                          fontSize: 17,
+                                          color: Colors.white),
+                                    ),
+                                    onTap: () {
+                                      Navigator.pushNamed(context, "Signup");
+                                    },
                                   ),
-                                  onTap: () {
-                                    Navigator.pushNamed(context, "Signup");
-                                  },
                                 )
                               ],
                             ),
@@ -130,7 +138,21 @@ class _LoginState extends State<Login> {
                     ),
                   ],
                 ),
-              )
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                width: 40,
+                height: 40,
+                child: IconButton(
+                  onPressed: () {},
+                  icon: Image.asset(
+                    "images/download.ico",
+                  ),
+                  color: Colors.red,
+                ),
+              ),
             ],
           ),
         ),
@@ -140,7 +162,7 @@ class _LoginState extends State<Login> {
 }
 
 ///////////////////////////widgetinput/////////////////////////////
-class Textinput extends StatelessWidget {
+class Textinput extends StatefulWidget {
   const Textinput({
     Key? key,
     required this.hint,
@@ -150,6 +172,12 @@ class Textinput extends StatelessWidget {
   final String hint;
   final TextInputType inputType;
   final TextInputAction inputAction;
+
+  @override
+  State<Textinput> createState() => _TextinputState();
+}
+
+class _TextinputState extends State<Textinput> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -158,20 +186,20 @@ class Textinput extends StatelessWidget {
         margin: const EdgeInsets.all(15),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16), color: Colors.grey[800]),
-        child: TextField(
+        child: TextFormField(
           decoration: InputDecoration(
               contentPadding:
                   const EdgeInsets.only(left: 20, top: 10, bottom: 10),
               border: InputBorder.none,
-              hintText: hint,
+              hintText: widget.hint,
               labelText: "Email",
               hintStyle: const TextStyle(color: Colors.white, fontSize: 16)),
           style: const TextStyle(
             color: Colors.white,
             fontSize: 18,
           ),
-          keyboardType: inputType,
-          textInputAction: inputAction,
+          keyboardType: widget.inputType,
+          textInputAction: widget.inputAction,
         ),
       ),
     );
@@ -179,15 +207,22 @@ class Textinput extends StatelessWidget {
 }
 
 ///////////////////////////widgetpassword////////////////////////////////
-class Passwordinput extends StatelessWidget {
+class Passwordinput extends StatefulWidget {
   const Passwordinput({
     Key? key,
+    required this.password,
     required this.hint,
     required this.inputAction,
   }) : super(key: key);
-  final String hint;
+  final String? hint, password;
 
   final TextInputAction inputAction;
+
+  @override
+  State<Passwordinput> createState() => _PasswordinputState();
+}
+
+class _PasswordinputState extends State<Passwordinput> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -196,12 +231,23 @@ class Passwordinput extends StatelessWidget {
         margin: const EdgeInsets.all(15),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16), color: Colors.grey[800]),
-        child: TextField(
+        child: TextFormField(
+          onSaved: (text) {
+            password = text;
+          },
+          validator: (value) {
+            if (value!.isEmpty) {
+              return "Empty Field";
+            }
+            if (value.length < 8) {
+              return "Password must be 8 character at less";
+            }
+          },
           decoration: InputDecoration(
               contentPadding:
                   const EdgeInsets.only(left: 20, top: 10, bottom: 10),
               border: InputBorder.none,
-              hintText: hint,
+              hintText: widget.hint,
               labelText: "Password",
               hintStyle: const TextStyle(color: Colors.white, fontSize: 16)),
           obscureText: true,
@@ -209,7 +255,7 @@ class Passwordinput extends StatelessWidget {
             color: Colors.white,
             fontSize: 18,
           ),
-          textInputAction: inputAction,
+          textInputAction: widget.inputAction,
         ),
       ),
     );
