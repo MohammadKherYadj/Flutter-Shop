@@ -1,4 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:shop/auth/Homepage/page/details/details_screen.dart';
+import 'package:shop/auth/Homepage/products.dart';
 
 import 'components/body.dart';
 
@@ -10,22 +13,15 @@ class HomeScren extends StatefulWidget {
 }
 
 class _HomeScrenState extends State<HomeScren> {
-  TabController? tabController;
-
-  @override
-  void initState() {
-    //tabController = TabController(length: 4, vsync: this.t);
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: DefaultTabController(
-            length: 4, child: Scaffold(body: Body(), appBar: BuildAppBar())));
+            length: 5,
+            child: Scaffold(body: const Body(), appBar: buildAppBar())));
   }
 
-  AppBar BuildAppBar() {
+  AppBar buildAppBar() {
     return AppBar(
       backgroundColor: Colors.white,
       bottom: TabBar(
@@ -33,13 +29,16 @@ class _HomeScrenState extends State<HomeScren> {
           isScrollable: true,
           physics: const BouncingScrollPhysics(),
           onTap: (value) {
-            print(value);
+            if (kDebugMode) {
+              print("TabBar $value");
+            }
           },
           tabs: const [
-            Tab(child: Text("lap")),
+            Tab(child: Text("Laptop")),
             Tab(child: Text("Mobile")),
-            Tab(child: Text("speacker")),
-            Tab(child: Text("computer"))
+            Tab(child: Text("Specker")),
+            Tab(child: Text("Computer")),
+            Tab(child: Text("AirBads")),
           ]),
       elevation: 2,
       centerTitle: true,
@@ -48,11 +47,69 @@ class _HomeScrenState extends State<HomeScren> {
               fontWeight: FontWeight.bold, color: Colors.black, fontSize: 20)),
       actions: <Widget>[
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            showSearch(context: context, delegate: DataSearch());
+          },
           icon: const Icon(Icons.search),
           color: Colors.black,
         ),
       ],
     );
+  }
+}
+
+class DataSearch extends SearchDelegate {
+  @override
+  List<Widget>? buildActions(BuildContext context) {
+    return [
+      IconButton(
+          onPressed: () {
+            query = "";
+          },
+          icon: const Icon(Icons.close))
+    ];
+  }
+
+  @override
+  Widget? buildLeading(BuildContext context) {
+    return IconButton(
+        onPressed: () {
+          close(context, null);
+        },
+        icon: const Icon(Icons.arrow_back));
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    List<Product> filterNames =
+        products.where((element) => element.title.contains(query)).toList();
+    return ListView.builder(
+        itemCount: query == "" ? products.length : filterNames.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => DetailsScreen(
+                          product: query == ""
+                              ? products[index]
+                              : filterNames[index],
+                        )),
+              );
+            },
+            leading: query == ""
+                ? Image.asset(products[index].image)
+                : Image.asset(filterNames[index].image),
+            title: query == ""
+                ? Text(products[index].title)
+                : Text(filterNames[index].title),
+          );
+        });
   }
 }

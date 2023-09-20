@@ -117,7 +117,7 @@ class _LoginState extends State<Login> {
                               Navigator.pushNamed(context, "home");
                             },
                             style: ElevatedButton.styleFrom(
-                              primary: Colors.red,
+                              backgroundColor: Colors.red,
                               elevation: 10,
                             ),
                             child: const Text(
