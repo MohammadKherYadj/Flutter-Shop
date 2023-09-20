@@ -51,7 +51,7 @@ class _LoginState extends State<Login> {
                 ),
               ),
               const SizedBox(
-                height: 100,
+                height: 50,
               ),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -93,7 +93,7 @@ class _LoginState extends State<Login> {
                               ),
                             ),
                             const SizedBox(
-                              height: 30,
+                              height: 20,
                             ),
                             Row(
                               children: [
@@ -210,7 +210,7 @@ class _TextinputState extends State<Textinput> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 12.0),
       child: Container(
-        margin: const EdgeInsets.all(15),
+        margin: const EdgeInsets.all(10),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16), color: Colors.grey[800]),
         child: TextFormField(
