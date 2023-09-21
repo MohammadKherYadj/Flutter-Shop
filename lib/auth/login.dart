@@ -1,12 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:shop/auth/signup.dart';
-import 'package:shop/homepage.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
 
   @override
   State<Login> createState() => _LoginState();
+}
+
+GlobalKey<FormState> formstate = GlobalKey<FormState>();
+var formdata = formstate.currentState;
+
+bool seePassword = false;
+String? email, password;
+
+bool send() {
+  if (formdata!.validate()) {
+    formdata!.save();
+    return true;
+  }
+  return false;
 }
 
 class _LoginState extends State<Login> {
@@ -42,23 +54,30 @@ class _LoginState extends State<Login> {
                 height: 100,
               ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        const Textinput(
-                          inputAction: TextInputAction.next,
-                          inputType: TextInputType.emailAddress,
-                          hint: "Email",
-                        ),
-                        //////////////////////////////////////////////////////////
+                        Form(
+                          key: formstate,
+                          child: const Column(
+                            children: [
+                              Textinput(
+                                inputAction: TextInputAction.next,
+                                inputType: TextInputType.emailAddress,
+                                hint: "Email",
+                              ),
+                              //////////////////////////////////////////////////////////
 
-                        const Passwordinput(
-                          inputAction: TextInputAction.done,
-                          hint: "Password",
-                          password: '',
+                              Passwordinput(
+                                inputAction: TextInputAction.done,
+                                hint: "Password",
+                                password: '',
+                              ),
+                            ],
+                          ),
                         ),
 
                         Row(
@@ -73,13 +92,13 @@ class _LoginState extends State<Login> {
                                     fontStyle: FontStyle.italic),
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 30,
                             ),
                             Row(
                               children: [
                                 Container(
-                                  margin: EdgeInsets.only(left: 20),
+                                  margin: const EdgeInsets.only(left: 20),
                                   child: InkWell(
                                     child: const Text(
                                       "Signup",
@@ -122,7 +141,15 @@ class _LoginState extends State<Login> {
                           padding: const EdgeInsets.only(top: 20),
                           child: ElevatedButton(
                             onPressed: () {
-                              Navigator.pushNamed(context, "home");
+                              if (send()) {
+                                if (email!.contains("admin")) {
+                                  Navigator.pushReplacementNamed(
+                                      context, "adminPage");
+                                } else {
+                                  Navigator.pushReplacementNamed(
+                                      context, "home");
+                                }
+                              } else {}
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.red,
@@ -139,10 +166,10 @@ class _LoginState extends State<Login> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Container(
+              SizedBox(
                 width: 40,
                 height: 40,
                 child: IconButton(
@@ -187,6 +214,15 @@ class _TextinputState extends State<Textinput> {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16), color: Colors.grey[800]),
         child: TextFormField(
+          onSaved: (text) {
+            email = text;
+          },
+          validator: (value) {
+            if (value!.isEmpty) {
+              return "Empty Field";
+            }
+            return null;
+          },
           decoration: InputDecoration(
               contentPadding:
                   const EdgeInsets.only(left: 20, top: 10, bottom: 10),
@@ -242,15 +278,27 @@ class _PasswordinputState extends State<Passwordinput> {
             if (value.length < 8) {
               return "Password must be 8 character at less";
             }
+            return null;
           },
           decoration: InputDecoration(
+              suffixIcon: IconButton(
+                icon: const Icon(
+                  Icons.remove_red_eye,
+                  color: Colors.black,
+                ),
+                onPressed: () {
+                  setState(() {
+                    seePassword = !seePassword;
+                  });
+                },
+              ),
               contentPadding:
                   const EdgeInsets.only(left: 20, top: 10, bottom: 10),
               border: InputBorder.none,
               hintText: widget.hint,
               labelText: "Password",
               hintStyle: const TextStyle(color: Colors.white, fontSize: 16)),
-          obscureText: true,
+          obscureText: seePassword,
           style: const TextStyle(
             color: Colors.white,
             fontSize: 18,

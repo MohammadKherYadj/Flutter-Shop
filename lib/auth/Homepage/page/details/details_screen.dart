@@ -17,30 +17,41 @@ class DetailsScreen extends StatelessWidget {
         body: SizedBox(
           height: double.infinity,
           width: double.infinity,
-          child: Column(
-            children: [
-              Container(
-                margin: const EdgeInsets.symmetric(vertical: 30),
-                child: Text(
-                  product!.title,
-                  style: const TextStyle(color: kTextColor, fontSize: 40),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Container(
+                  margin: const EdgeInsets.symmetric(vertical: 30),
+                  child: Text(
+                    textAlign: TextAlign.center,
+                    product!.title,
+                    style: const TextStyle(color: kTextColor, fontSize: 40),
+                  ),
                 ),
-              ),
-              Image.asset(product!.image),
-              Container(
-                margin: const EdgeInsets.symmetric(vertical: 25),
-                child: Text(
-                  "Price ${product!.price}\$",
-                  style: const TextStyle(
-                      fontWeight: FontWeight.bold, fontSize: 20),
+                Image.asset(product!.image),
+                Container(
+                  margin: const EdgeInsets.symmetric(vertical: 25),
+                  child: Text(
+                    "Price ${product!.price}\$",
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 20),
+                  ),
                 ),
-              ),
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.grey),
-                child: const Text("Add To Card"),
-              )
-            ],
+                Container(
+                  decoration: BoxDecoration(
+                      color: Colors.grey,
+                      borderRadius: BorderRadius.circular(20)),
+                  margin: const EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
+                  child: Text(product!.description),
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.grey),
+                  child: const Text("Add To Card"),
+                )
+              ],
+            ),
           ),
         ),
       ),

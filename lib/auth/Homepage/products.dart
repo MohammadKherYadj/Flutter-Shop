@@ -1,5 +1,3 @@
-import 'package:shop/auth/Homepage/page/components/categories.dart';
-
 class Product {
   final int price, id;
   final String description, title, image, subtitle;
@@ -20,7 +18,7 @@ List<Product> products = [
       description:
           "Compatible with ios devaice , iPadOS device ,Apple Watch,or Mac with the lasted Software",
       id: 1,
-      image: "images/download.jpg",
+      image: "images/AirPodsGreen.png",
       subtitle: "AirPods with MagSafe Charging Case",
       title: " AirPods",
       price: 200,
@@ -29,7 +27,7 @@ List<Product> products = [
       description:
           " Ram : 8 GB ,Hard : 256 GB,disply : Super Amoled , camera : 200px",
       id: 2,
-      image: "images/Iphon 13 pro max 13 red.jpg",
+      image: "images/Iphon_13_pro_max_13_red.png",
       price: 1900,
       subtitle: "Iphone 13 pro Max",
       title: "Iphone 13 pro max ",
@@ -37,7 +35,7 @@ List<Product> products = [
   Product(
       description: "Ram : 4, Hard : 128 GB , disply : HD , Camera : 48px",
       id: 3,
-      image: "images/Samsung galaxy A14 green.jpg",
+      image: "images/Samsung_galaxy_A14_green.png",
       price: 300,
       subtitle: "Samsung Galaxy A14",
       title: "Samsung Galaxy A14",
@@ -45,7 +43,7 @@ List<Product> products = [
   Product(
       description: "we can turn on with usb and bluetooth",
       id: 4,
-      image: "images/Speacker Red.jpg",
+      image: "images/Speacker_Red.png",
       price: 50,
       subtitle: "Speacker",
       title: "Specker",
@@ -54,7 +52,7 @@ List<Product> products = [
       description:
           "Compatible with ios devaice , iPadOS device ,Apple Watch,or Mac with the lasted Software",
       id: 1,
-      image: "images/download.jpg",
+      image: "images/AirPodsRed.png",
       subtitle: "AirPods with MagSafe Charging Case",
       title: " AirPods",
       price: 200,
@@ -63,23 +61,23 @@ List<Product> products = [
       description:
           " Ram : 8 GB ,Hard : 256 GB,disply : Super Amoled , camera : 200px",
       id: 2,
-      image: "images/Iphon 13 pro max 13 red.jpg",
+      image: "images/Iphon_13_pro_max_Blue.png",
       price: 1900,
-      subtitle: "image/Iphon 13 pro max Green.jpg",
+      subtitle: "Iphon 13 pro max Green",
       title: "Iphone 13 pro max ",
       categories: "mobile"),
   Product(
       description: "Ram : 4, Hard : 128 GB , disply : HD , Camera : 48px",
       id: 3,
-      image: "images/Samsung galaxy A14 red.jpg",
+      image: "images/Samsung_galaxy_A14_red.png",
       price: 300,
       subtitle: "Samsung Galaxy A14",
-      title: "ٍSamsung Galaxy A14",
+      title: "Samsung Galaxy A14",
       categories: "mobile"),
   Product(
       description: "we can turn on with usb and bluetooth",
       id: 4,
-      image: "images/Speacker Red.jpg",
+      image: "images/SpeackerGreen.png",
       price: 50,
       subtitle: "Speacker",
       title: "Specker",
@@ -88,7 +86,7 @@ List<Product> products = [
       description:
           "Compatible with ios devaice , iPadOS device ,Apple Watch,or Mac with the lasted Software",
       id: 1,
-      image: "images/download.jpg",
+      image: "images/AirPodsWhite.png",
       subtitle: "AirPods with MagSafe Charging Case",
       title: " AirPods",
       price: 200,
@@ -97,7 +95,7 @@ List<Product> products = [
       description:
           " Ram : 8 GB ,Hard : 256 GB,disply : Super Amoled , camera : 200px",
       id: 2,
-      image: "images/Iphon 13 pro max 13 red.jpg",
+      image: "images/Iphon_13_pro_max_Green.png",
       price: 1900,
       subtitle: "Iphone 13 pro Max",
       title: "Iphone 13 pro max ",
@@ -105,15 +103,15 @@ List<Product> products = [
   Product(
       description: "Ram : 4, Hard : 128 GB , disply : HD , Camera : 48px",
       id: 3,
-      image: "images/Samsung galaxy A14 green.jpg",
+      image: "images/Samsung_galaxy_A14_blue.png",
       price: 300,
       subtitle: "Samsung Galaxy A14",
-      title: "ٍSamsung Galaxy A14",
+      title: "Samsung Galaxy A14",
       categories: "mobile"),
   Product(
       description: "we can turn on with usb and bluetooth",
       id: 4,
-      image: "images/Speacker Red.jpg",
+      image: "images/Speacker.png",
       price: 50,
       subtitle: "Speacker",
       title: "Specker",

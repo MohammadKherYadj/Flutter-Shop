@@ -91,24 +91,26 @@ class DataSearch extends SearchDelegate {
     return ListView.builder(
         itemCount: query == "" ? products.length : filterNames.length,
         itemBuilder: (context, index) {
-          return ListTile(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => DetailsScreen(
-                          product: query == ""
-                              ? products[index]
-                              : filterNames[index],
-                        )),
-              );
-            },
-            leading: query == ""
-                ? Image.asset(products[index].image)
-                : Image.asset(filterNames[index].image),
-            title: query == ""
-                ? Text(products[index].title)
-                : Text(filterNames[index].title),
+          return Card(
+            child: ListTile(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => DetailsScreen(
+                            product: query == ""
+                                ? products[index]
+                                : filterNames[index],
+                          )),
+                );
+              },
+              leading: query == ""
+                  ? Image.asset(products[index].image)
+                  : Image.asset(filterNames[index].image),
+              title: query == ""
+                  ? Text(products[index].title)
+                  : Text(filterNames[index].title),
+            ),
           );
         });
   }

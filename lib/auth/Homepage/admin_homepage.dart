@@ -12,10 +12,24 @@ class _AdminHomePageState extends State<AdminHomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(),
-        drawer: Drawer(),
-        body: Container(),
-      ),
+          appBar: AppBar(title: const Text("Admin Page")),
+          drawer: Drawer(),
+          body: SizedBox(
+            width: double.infinity,
+            height: double.infinity,
+            child: Column(
+              children: [
+                ElevatedButton(
+                    onPressed: () {}, child: const Text("View Products")),
+                ElevatedButton(
+                    onPressed: () {}, child: const Text("Add Product")),
+                ElevatedButton(
+                    onPressed: () {}, child: const Text("Update Product")),
+                ElevatedButton(
+                    onPressed: () {}, child: const Text("Delete Product")),
+              ],
+            ),
+          )),
     );
   }
 }
