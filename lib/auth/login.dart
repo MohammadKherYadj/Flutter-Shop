@@ -58,82 +58,64 @@ class _LoginState extends State<Login> {
                 child: Column(
                   children: [
                     Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Form(
-                          key: formstate,
-                          child: const Column(
-                            children: [
-                              Textinput(
-                                inputAction: TextInputAction.next,
-                                inputType: TextInputType.emailAddress,
-                                hint: "Email",
-                              ),
-                              //////////////////////////////////////////////////////////
-
-                              Passwordinput(
-                                inputAction: TextInputAction.done,
-                                hint: "Password",
-                                password: '',
-                              ),
-                            ],
-                          ),
-                        ),
-
-                        Row(
-                          children: [
-                            Container(
-                              margin: const EdgeInsets.only(left: 20),
-                              child: const Text(
-                                "forget password?",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 17,
-                                    fontStyle: FontStyle.italic),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 20,
-                            ),
-                            Row(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Form(
+                            key: formstate,
+                            child: const Column(
                               children: [
-                                Container(
-                                  margin: const EdgeInsets.only(left: 20),
-                                  child: InkWell(
-                                    child: const Text(
-                                      "Signup",
-                                      style: TextStyle(
-                                          fontStyle: FontStyle.italic,
-                                          fontSize: 17,
-                                          color: Colors.white),
-                                    ),
-                                    onTap: () {
-                                      Navigator.pushNamed(context, "Signup");
-                                    },
-                                  ),
-                                )
+                                Textinput(
+                                  inputAction: TextInputAction.next,
+                                  inputType: TextInputType.emailAddress,
+                                  hint: "Email",
+                                ),
+                                //////////////////////////////////////////////////////////
+
+                                Passwordinput(
+                                  inputAction: TextInputAction.done,
+                                  hint: "Password",
+                                  password: '',
+                                ),
                               ],
                             ),
-                          ],
-                        ),
-                        // Row(
-                        //   children: [
-
-                        //     // Container(
-                        //     //   margin: EdgeInsets.only(right: 20),
-                        //     //   padding: EdgeInsets.only(right: 20),
-                        //     //   child: Text(
-                        //     //     "creat account",
-                        //     //     style: TextStyle(
-                        //     //         color: Colors.white,
-                        //     //         fontSize: 17,
-                        //     //         fontStyle: FontStyle.italic),
-                        //     //   ),
-                        //     // ),
-                        //   ],
-                        // ),
-                      ],
-                    ),
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                margin: const EdgeInsets.only(left: 20),
+                                child: const Text(
+                                  "forget password?",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 17,
+                                      fontStyle: FontStyle.italic),
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              Row(
+                                children: [
+                                  Container(
+                                    margin: const EdgeInsets.only(left: 20),
+                                    child: InkWell(
+                                      child: const Text(
+                                        "Signup",
+                                        style: TextStyle(
+                                            fontStyle: FontStyle.italic,
+                                            fontSize: 17,
+                                            color: Colors.white),
+                                      ),
+                                      onTap: () {
+                                        Navigator.pushNamed(context, "Signup");
+                                      },
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ],
+                          )
+                        ]),
                     Column(
                       children: [
                         Container(
