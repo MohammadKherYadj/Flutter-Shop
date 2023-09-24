@@ -10,7 +10,7 @@ class Login extends StatefulWidget {
 GlobalKey<FormState> formstate = GlobalKey<FormState>();
 var formdata = formstate.currentState;
 
-bool seePassword = false;
+bool seePassword = true;
 String? email, password;
 
 bool send() {
@@ -173,7 +173,9 @@ class _LoginState extends State<Login> {
                 width: 40,
                 height: 40,
                 child: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, "home");
+                  },
                   icon: Image.asset(
                     "images/download.ico",
                   ),
