@@ -49,7 +49,7 @@ class DetailsScreen extends StatelessWidget {
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.grey),
                   child: const Text("Add To Card"),
-                )
+                ),
               ],
             ),
           ),
