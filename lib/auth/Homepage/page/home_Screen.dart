@@ -18,7 +18,24 @@ class _HomeScrenState extends State<HomeScren> {
     return SafeArea(
         child: DefaultTabController(
             length: 5,
-            child: Scaffold(body: const Body(), appBar: buildAppBar())));
+            child: Scaffold(
+                drawer: Drawer(
+                  child: Column(children: [
+                    const UserAccountsDrawerHeader(
+                      accountName: Text("Mohammad"),
+                      accountEmail: Text("mohammad@gmail.com"),
+                    ),
+                    InkWell(
+                      onTap: () {},
+                      child: const ListTile(
+                        title: Text("Setting"),
+                        leading: Icon(Icons.settings),
+                      ),
+                    )
+                  ]),
+                ),
+                body: const Body(),
+                appBar: buildAppBar())));
   }
 
   AppBar buildAppBar() {

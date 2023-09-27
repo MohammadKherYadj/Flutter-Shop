@@ -7,12 +7,16 @@ class AddProduct extends StatefulWidget {
   State<AddProduct> createState() => _AddProductState();
 }
 
+List<String> catigories = ["Laptop", "Mobile", "Specker", "Airbads"];
+var selectedCarigory;
+
 class _AddProductState extends State<AddProduct> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.black,
         title: const Text("Add Product"),
       ),
       body: SingleChildScrollView(
@@ -105,15 +109,64 @@ class _AddProductState extends State<AddProduct> {
                   ),
                 ),
               ),
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 20),
+                child: DropdownButton(
+                  hint: const Text("Carigory"),
+                  items: catigories
+                      .map((e) => DropdownMenuItem(
+                            value: e,
+                            child: Text(e),
+                          ))
+                      .toList(),
+                  onChanged: (value) {
+                    setState(() {
+                      selectedCarigory = value;
+                    });
+                  },
+                  value: selectedCarigory,
+                ),
+              ),
               ElevatedButton(
-                onPressed: () {},
-                child: Icon(Icons.add_a_photo),
+                onPressed: () {
+                  showModalBottomSheet(
+                      context: context,
+                      builder: (context) => SizedBox(
+                            height: 150,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                    margin: const EdgeInsets.symmetric(
+                                        horizontal: 60),
+                                    child: const Icon(
+                                      color: Colors.black,
+                                      Icons.camera,
+                                      size: 80,
+                                    )),
+                                Container(
+                                    margin: const EdgeInsets.symmetric(
+                                        horizontal: 60),
+                                    child: const Icon(
+                                      color: Colors.black,
+                                      Icons.photo,
+                                      size: 80,
+                                    )),
+                              ],
+                            ),
+                          ));
+                },
                 style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(horizontal: 150)),
+                  padding: const EdgeInsets.symmetric(horizontal: 150),
+                ),
+                child: const Icon(Icons.add_a_photo),
               )
             ],
           ),
-          ElevatedButton(onPressed: () {}, child: const Text("Add"))
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text("Add"),
+          )
         ]),
       ),
     ));

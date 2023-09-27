@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shop/auth/Homepage/Admin%20Home%20Pages/add_product.dart';
+import 'package:shop/auth/Homepage/Admin%20Home%20Pages/delete_prodect.dart';
 import 'package:shop/auth/Homepage/Admin%20Home%20Pages/edit_product.dart';
+import 'package:shop/auth/Homepage/Admin%20Home%20Pages/view_products.dart';
 
 class AdminHomePage extends StatefulWidget {
   const AdminHomePage({super.key});
@@ -18,6 +20,7 @@ class _AdminHomePageState extends State<AdminHomePage> {
           drawer: const Drawer(
             child: Column(children: [
               UserAccountsDrawerHeader(
+                  decoration: BoxDecoration(color: Colors.black),
                   accountName: Text("Mohammad"),
                   accountEmail: Text("Mohammad@admin.com"))
             ]),
@@ -32,7 +35,13 @@ class _AdminHomePageState extends State<AdminHomePage> {
                 Container(
                   margin: const EdgeInsets.all(20),
                   child: ElevatedButton(
-                      onPressed: () {}, child: const Text("View Products")),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const ViewProducts()));
+                      },
+                      child: const Text("View Products")),
                 ),
                 Container(
                   margin: const EdgeInsets.all(20),
@@ -59,7 +68,13 @@ class _AdminHomePageState extends State<AdminHomePage> {
                 Container(
                   margin: const EdgeInsets.all(20),
                   child: ElevatedButton(
-                      onPressed: () {}, child: const Text("Delete Product")),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const DeleteProduct()));
+                      },
+                      child: const Text("Delete Product")),
                 ),
               ],
             ),
