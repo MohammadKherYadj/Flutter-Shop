@@ -34,10 +34,10 @@ class _HomeScrenState extends State<HomeScren> {
             }
           },
           tabs: const [
-            Tab(child: Text("Laptop")),
+            Tab(child: Text("All")),
             Tab(child: Text("Mobile")),
             Tab(child: Text("Specker")),
-            Tab(child: Text("Computer")),
+            Tab(child: Text("Laptop")),
             Tab(child: Text("AirBads")),
           ]),
       elevation: 2,
@@ -105,8 +105,8 @@ class DataSearch extends SearchDelegate {
                 );
               },
               leading: query == ""
-                  ? Image.asset(products[index].image)
-                  : Image.asset(filterNames[index].image),
+                  ? Image.asset(products[index].image, width: 60)
+                  : Image.asset(filterNames[index].image, width: 60),
               title: query == ""
                   ? Text(products[index].title)
                   : Text(filterNames[index].title),

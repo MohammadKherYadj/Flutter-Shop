@@ -1,7 +1,8 @@
 class Product {
-  final int price, id;
+  final int id;
   final String description, title, image, subtitle;
   final String categories;
+  final double price;
 
   Product(
       {required this.description,
