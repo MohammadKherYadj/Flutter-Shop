@@ -30,7 +30,7 @@ class _AddProductState extends State<AddProduct> {
                     labelText: "Title",
                     labelStyle: const TextStyle(color: Colors.black),
                     disabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20)),
+                        borderRadius:  BorderRadius.circular(20)),
                     focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20)),
                     enabledBorder: OutlineInputBorder(
