@@ -108,6 +108,8 @@ class _LoginState extends State<Login> {
                                       ),
                                       onTap: () {
                                         Navigator.pushNamed(context, "Signup");
+
+                                        ///State Management { SetState , {{GetX} , Block , Provider} , Flutter Block }
                                       },
                                     ),
                                   )
