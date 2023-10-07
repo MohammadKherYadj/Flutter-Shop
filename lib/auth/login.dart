@@ -174,7 +174,7 @@ class _LoginState extends State<Login> {
   }
 }
 
-///////////////////////////widgetinput/////////////////////////////
+///////////////////////////widget text input/////////////////////////////
 class Textinput extends StatefulWidget {
   const Textinput({
     Key? key,
