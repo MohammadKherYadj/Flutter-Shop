@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop/auth/Homepage/homepage.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -156,7 +157,10 @@ class _LoginState extends State<Login> {
                 height: 40,
                 child: IconButton(
                   onPressed: () {
-                    Navigator.pushReplacementNamed(context, "home");
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) => HomePage()));
                   },
                   icon: Image.asset(
                     "images/download.ico",
