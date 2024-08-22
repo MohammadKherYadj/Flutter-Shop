@@ -3,7 +3,6 @@ import 'package:shop/auth/Homepage/Admin%20Home%20Pages/admin_homepage.dart';
 import 'package:shop/auth/Homepage/page/home_Screen.dart';
 import 'auth/login.dart';
 import 'auth/signup.dart';
-import 'package:firebase_core/Firebase_core.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());

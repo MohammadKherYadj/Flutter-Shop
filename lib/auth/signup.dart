@@ -180,11 +180,10 @@ class _SignUpState extends State<SignUp> {
                         } else {}
                       },
                       style: ElevatedButton.styleFrom(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                          padding: const EdgeInsets.symmetric(horizontal: 20), backgroundColor: Colors.white,
                           side: const BorderSide(
                             color: Colors.black,
-                          ),
-                          primary: Colors.white),
+                          )),
                       child: const Text(
                         "Sign Up",
                         style: TextStyle(color: Colors.black),

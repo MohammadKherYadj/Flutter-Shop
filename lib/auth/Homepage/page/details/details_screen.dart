@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:shop/auth/Homepage/constants.dart';
 import 'package:shop/auth/Homepage/products.dart';
 
-class DetailsScreen extends StatelessWidget {
+class DetailsScreen extends StatefulWidget {
   final Product? product;
   const DetailsScreen({super.key, this.product});
 
+  @override
+  State<DetailsScreen> createState() => _DetailsScreenState();
+}
+
+class _DetailsScreenState extends State<DetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -24,15 +29,15 @@ class DetailsScreen extends StatelessWidget {
                   margin: const EdgeInsets.symmetric(vertical: 30),
                   child: Text(
                     textAlign: TextAlign.center,
-                    product!.title,
+                    widget.product!.title,
                     style: const TextStyle(color: kTextColor, fontSize: 40),
                   ),
                 ),
-                Image.asset(product!.image),
+                Image.asset(widget.product!.image),
                 Container(
                   margin: const EdgeInsets.symmetric(vertical: 25),
                   child: Text(
-                    "Price ${product!.price}\$",
+                    "Price ${widget.product!.price}\$",
                     style: const TextStyle(
                         fontWeight: FontWeight.bold, fontSize: 20),
                   ),
@@ -43,7 +48,7 @@ class DetailsScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20)),
                   margin: const EdgeInsets.all(20),
                   padding: const EdgeInsets.all(20),
-                  child: Text(product!.description),
+                  child: Text(widget.product!.description),
                 ),
                 ElevatedButton(
                   onPressed: () {},

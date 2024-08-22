@@ -3,7 +3,7 @@ import 'package:shop/auth/Homepage/page/details/details_screen.dart';
 import '../../constants.dart';
 import '../../products.dart';
 
-class ItemCard extends StatelessWidget {
+class ItemCard extends StatefulWidget {
   final Product product;
 
   const ItemCard({
@@ -12,6 +12,11 @@ class ItemCard extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<ItemCard> createState() => _ItemCardState();
+}
+
+class _ItemCardState extends State<ItemCard> {
+  @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
@@ -19,7 +24,7 @@ class ItemCard extends StatelessWidget {
             context,
             MaterialPageRoute(
                 builder: (context) => DetailsScreen(
-                      product: product,
+                      product: widget.product,
                     )));
       },
       child: Card(
@@ -32,7 +37,7 @@ class ItemCard extends StatelessWidget {
               width: 150,
               decoration:
                   BoxDecoration(borderRadius: BorderRadius.circular(20)),
-              child: Image.asset(product.image),
+              child: Image.asset(widget.product.image),
             ),
             Padding(
               padding:
@@ -40,7 +45,7 @@ class ItemCard extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.only(left: 15),
                 child: Text(
-                  product.title,
+                  widget.product.title,
                   style: const TextStyle(color: kTextColor),
                 ),
               ),
@@ -48,7 +53,7 @@ class ItemCard extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 20),
               child: Text(
-                "\$${product.price}",
+                "\$${widget.product.price}",
                 style: const TextStyle(fontWeight: FontWeight.bold),
               ),
             )
