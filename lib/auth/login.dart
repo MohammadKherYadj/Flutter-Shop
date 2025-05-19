@@ -109,6 +109,8 @@ class _LoginState extends State<Login> {
                                       ),
                                       onTap: () {
                                         Navigator.pushNamed(context, "Signup");
+
+                                        ///State Management { SetState , {{GetX} , Block , Provider} , Flutter Block }
                                       },
                                     ),
                                   )
@@ -176,7 +178,7 @@ class _LoginState extends State<Login> {
   }
 }
 
-///////////////////////////widgetinput/////////////////////////////
+///////////////////////////widget text input/////////////////////////////
 class Textinput extends StatefulWidget {
   const Textinput({
     Key? key,

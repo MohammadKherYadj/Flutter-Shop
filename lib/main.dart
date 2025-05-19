@@ -16,6 +16,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: const Login(),
+      theme: ThemeData(
+          appBarTheme: const AppBarTheme(backgroundColor: Colors.black),
+          elevatedButtonTheme: ElevatedButtonThemeData(
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.black)))),
       routes: {
         "home": (context) => const HomeScren(),
         "login": (context) => const Login(),
